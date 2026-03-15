@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: tv-channel-lite
+    env: docker
+    plan: free
+    region: oregon
+    envVars:
+      - key: ADMIN_PASSWORD
+        value: Manzanilla5000
+      - key: PORT
+        value: 3000
