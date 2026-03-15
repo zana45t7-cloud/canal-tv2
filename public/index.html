@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDA TV - Invincible Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+    <div class="comic-bg"></div>
+    <div class="halftone-overlay"></div>
+
+    <header class="main-header">
+        <div class="logo">
+            <span class="logo-gda">GDA</span>
+            <span class="logo-tv">TV</span>
+        </div>
+        <div class="live-status">
+            <div class="pulse-red"></div>
+            <span>TRANSMISIÓN EN VIVO</span>
+        </div>
+        <button id="admin-toggle" class="btn-hero small">ADMIN ACCESS</button>
+    </header>
+
+    <main class="container">
+        <!-- TV PLAYER SECTION -->
+        <section class="player-section">
+            <div class="tv-frame">
+                <div id="player-container">
+                    <!-- Players will be injected or swapped here -->
+                    <div id="yt-player-target"></div>
+                    <div id="h5-player-container"></div>
+                    <div id="ok-player-container"></div>
+                </div>
+                <div class="tv-overlay"></div>
+                <div class="static-effect" id="static"></div>
+            </div>
+            
+            <div class="now-playing-info">
+                <h1 id="current-title">SINTONIZANDO...</h1>
+                <div class="time-display" id="clock">00:00:00</div>
+            </div>
+        </section>
+
+        <!-- ADMIN PANEL SECTION (HIDDEN BY DEFAULT) -->
+        <section id="admin-panel" class="admin-panel hidden">
+            <div class="admin-card">
+                <div class="admin-header">
+                    <h2>GLOBAL DEFENSE AGENCY - OVERRIDE</h2>
+                    <button id="admin-close" class="close-btn">&times;</button>
+                </div>
+                
+                <div id="admin-login-view" class="login-view">
+                    <p>IDENTIFICACIÓN REQUERIDA</p>
+                    <input type="password" id="admin-pass" placeholder="PASSWORD">
+                    <button id="admin-login-btn" class="btn-hero">ACCEDER</button>
+                </div>
+
+                <div id="admin-content-view" class="admin-content hidden">
+                    <div class="admin-grid">
+                        <div class="admin-form">
+                            <h3>PROGRAMAR TRANSMISIÓN</h3>
+                            <div class="input-group">
+                                <label>TÍTULO</label>
+                                <input type="text" id="sched-title" placeholder="Ej: Episodio 01">
+                            </div>
+                            <div class="input-group">
+                                <label>LINK (Directo o YouTube)</label>
+                                <input type="text" id="sched-url" placeholder="URL del video">
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>HORA DE INICIO</label>
+                                    <input type="datetime-local" id="sched-time">
+                                </div>
+                            </div>
+                            <button id="add-schedule-btn" class="btn-hero">SUBIR A ÓRBITA</button>
+                        </div>
+                        
+                        <div class="admin-list">
+                            <h3>CRONOGRAMA</h3>
+                            <div id="schedule-items" class="items-list">
+                                <!-- Items will be injected here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="ticker-footer">
+        <div class="ticker-content" id="ticker">
+            CARGANDO DATOS DE LA RED GLOBAL... 
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
